@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script>
+        function lottonum() {    
+            var plots=[null,null,null,null,null,null];
+            for(i=0; i<6;i++) {
+                while(true) {
+                    cnt = 0;
+                    plots[i] = Math.floor((Math.random() * 45) + 1);
+                    for(j=0; j<i; j++) {
+                        if(plots[i] == plots[j])
+                        {
+                            cnt++;
+                            break;
+                        }
+                    }
+                    if(cnt == 0)
+                        break;
+                }
+            }
+            document.write("로또번호는 " + plots + "<br>");
+        }
+    </script>
+    <style>
+        h3{
+            text-align: center;
+            color: rgb(255, 0, 0);
+        }
+        button{
+            align-content: center;
+        }
+    </style>
+    
+</head>
+<body>
+    <h3>lotto</h3>
+    <hr>
+    <button onclick="lottonum()" style="height:10ex; width: 15ex;">로또번호 출력</button>
+</body>
+</html>
